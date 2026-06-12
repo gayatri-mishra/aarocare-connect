@@ -19,3 +19,15 @@ Health Appointment Booking Platform Prototype.
 
 ## Developer
 InternLabs Project
+
+## Folder Structure
+
+css/ - Stylesheets
+
+js/ - JavaScript files
+
+pages/ - Application pages
+
+data/ - Mock data for testing
+
+assets/ - Images and icons
