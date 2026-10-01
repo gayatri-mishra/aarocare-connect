@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Doctors | Aarocare Connect</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            Aarocare Connect
+        </div>
+
+        <div class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('logout') }}" class="nav-signup">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+
+        <h1>Find a Doctor</h1>
+
+        <p>
+            Choose a doctor based on their specialization and experience.
+        </p>
+
+    </section>
+
+
+    <!-- Doctor Directory -->
+    <div class="doctor-container">
+
+        {% if doctors %}
+
+            {% for doctor in doctors %}
+
+                <div class="doctor-card">
+
+                    <div class="doctor-icon">
+                        👨‍⚕️
+                    </div>
+
+                    <h3>
+                        {{ doctor.name }}
+                    </h3>
+
+                    <p class="doctor-specialization">
+                        {{ doctor.specialization }}
+                    </p>
+
+                    <p class="doctor-experience">
+                        <strong>{{ doctor.experience }}</strong>
+                        Years Experience
+                    </p>
+
+                    <a href="{{ url_for('booking', doctor=doctor.name) }}">
+                        <button type="button">
+                            Book Appointment
+                        </button>
+                    </a>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="doctor-card">
+
+                <div class="doctor-icon">
+                    🩺
+                </div>
+
+                <h3>No Doctors Available</h3>
+
+                <p>
+                    Please check again later.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>Aarocare Connect</h3>
+
+        <p>
+            Making healthcare simpler and more accessible.
+        </p>
+
+        <p class="copyright">
+            © 2026 Aarocare Connect. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,971 @@
+/* ================================
+   GLOBAL STYLES
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar,
+nav {
+    background-color: #1F4E78;
+    color: white;
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo,
+nav h2 {
+    font-size: 22px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a,
+nav a {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-signup {
+    background-color: white;
+    color: #1F4E78 !important;
+    padding: 9px 16px;
+    border-radius: 5px;
+}
+
+.nav-signup:hover {
+    opacity: 0.9;
+}
+
+
+/* ================================
+   HOMEPAGE HERO
+================================ */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #eef5fa,
+        #ffffff
+    );
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-label {
+    color: #2E5C8A;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #1F4E78;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+button {
+    background-color: #2E5C8A;
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.primary-button {
+    background-color: #2E5C8A;
+    color: white;
+}
+
+.secondary-button {
+    background-color: white;
+    color: #1F4E78;
+    border: 2px solid #2E5C8A;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+/* ================================
+   FEATURES
+================================ */
+
+.features {
+    padding: 70px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.features h2 {
+    color: #1F4E78;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.feature-container {
+    max-width: 1000px;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 280px;
+
+    padding: 30px 20px;
+
+    background-color: #f7f9fc;
+
+    border: 1px solid #e0e6ec;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #1F4E78;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background-color: #1F4E78;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .copyright {
+    font-size: 13px;
+
+    opacity: 0.8;
+
+    margin-top: 20px;
+}
+
+
+/* ================================
+   FORMS
+================================ */
+
+.form-container {
+    width: 350px;
+
+    max-width: 90%;
+
+    margin: 80px auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h2 {
+    color: #1F4E78;
+
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 11px;
+
+    margin: 10px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+
+    border-color: #2E5C8A;
+}
+
+.form-container button {
+    width: 100%;
+}
+
+
+/* ================================
+   BOOKING FORM
+================================ */
+
+.booking-form {
+    max-width: 450px;
+}
+
+.form-description {
+    color: #666;
+
+    margin-bottom: 20px;
+
+    line-height: 1.5;
+}
+
+.booking-form label {
+    display: block;
+
+    text-align: left;
+
+    margin-top: 12px;
+
+    margin-bottom: 5px;
+
+    color: #1F4E78;
+
+    font-weight: bold;
+}
+
+.form-hint {
+    text-align: left;
+
+    font-size: 13px;
+
+    color: #777;
+
+    margin: 5px 0 20px;
+}
+
+
+/* ================================
+   PAGE TITLE
+================================ */
+
+.page-title {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #1F4E78;
+}
+
+
+/* ================================
+   PAGE HEADER
+================================ */
+
+.page-header {
+    text-align: center;
+
+    padding: 50px 20px 20px;
+}
+
+.page-header h1 {
+    color: #1F4E78;
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #666;
+}
+
+
+/* ================================
+   DOCTOR DIRECTORY
+================================ */
+
+.doctor-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+}
+
+.doctor-card {
+    width: 250px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-4px);
+}
+
+.doctor-card h3 {
+    color: #1F4E78;
+
+    margin-bottom: 10px;
+}
+
+.doctor-card p {
+    margin-bottom: 10px;
+
+    color: #555;
+}
+
+.doctor-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.doctor-specialization {
+    color: #2E5C8A !important;
+
+    font-weight: bold;
+}
+
+.doctor-experience {
+    color: #555;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================================
+   ERROR MESSAGE
+================================ */
+
+.error-message {
+    color: #d32f2f;
+
+    background-color: #ffebee;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+
+/* ================================
+   FLASH MESSAGE
+================================ */
+
+.flash-message {
+    width: 80%;
+
+    max-width: 600px;
+
+    margin: 20px auto;
+
+    padding: 12px;
+
+    border-radius: 6px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.flash-message.success {
+    background-color: #e8f5e9;
+
+    color: #2e7d32;
+}
+
+.flash-message.error {
+    background-color: #ffebee;
+
+    color: #c62828;
+}
+
+
+/* ================================
+   STATUS
+================================ */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.status.upcoming {
+    background-color: #e8f5e9;
+
+    color: #2e7d32;
+}
+
+.status.cancelled {
+    background-color: #ffebee;
+
+    color: #c62828;
+}
+
+.status.completed {
+    background-color: #e3f2fd;
+
+    color: #1565c0;
+}
+
+
+/* ================================
+   DASHBOARD HEADER
+================================ */
+
+.dashboard-header {
+    text-align: center;
+
+    padding: 45px 20px 25px;
+}
+
+.dashboard-label {
+    color: #2E5C8A;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.dashboard-header h1 {
+    color: #1F4E78;
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+.dashboard-header p {
+    color: #666;
+}
+
+
+/* ================================
+   DASHBOARD ACTIONS
+================================ */
+
+.dashboard-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin: 10px auto 40px;
+}
+
+.dashboard-action {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background-color: #2E5C8A;
+
+    color: white;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.dashboard-action:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
+
+.dashboard-action span {
+    font-size: 18px;
+}
+
+
+/* ================================
+   DASHBOARD APPOINTMENTS
+================================ */
+
+.appointment-container {
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 0 auto 60px;
+}
+
+.appointment-section {
+    margin-bottom: 60px;
+}
+
+.appointment-section h2 {
+    text-align: center;
+
+    color: #1F4E78;
+
+    margin-bottom: 8px;
+}
+
+.appointment-section .section-description {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.appointment-list {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.appointment-card {
+    width: 280px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    background-color: white;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s;
+}
+
+.appointment-card:hover {
+    transform: translateY(-4px);
+}
+
+.appointment-icon {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.appointment-card h3 {
+    margin-bottom: 18px;
+
+    color: #1F4E78;
+}
+
+.appointment-card p {
+    margin: 12px 0;
+
+    line-height: 1.5;
+}
+
+
+/* ================================
+   CANCEL BUTTON
+================================ */
+
+.cancel-btn {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 9px 14px;
+
+    background-color: #c62828;
+
+    color: white;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+.cancel-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* ================================
+   EMPTY APPOINTMENT MESSAGE
+================================ */
+
+.empty-message {
+    max-width: 500px;
+
+    margin: auto;
+
+    padding: 35px 20px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.empty-message h3 {
+    color: #1F4E78;
+
+    margin-bottom: 10px;
+}
+
+.empty-message p {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+.empty-message .primary-button {
+    display: inline-block;
+}
+
+
+/* ================================
+   OLD DASHBOARD NAV
+   Kept for compatibility
+================================ */
+
+.dashboard-nav {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px 30px;
+}
+
+.dashboard-nav a {
+    background-color: #2E5C8A;
+
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+.dashboard-nav a:hover {
+    opacity: 0.9;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVENESS
+================================ */
+
+@media (max-width: 600px) {
+
+    /* Navbar */
+
+    .navbar,
+    nav {
+        padding: 15px 20px;
+    }
+
+    .logo,
+    nav h2 {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 450px;
+
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p,
+    .hero-description {
+        font-size: 16px;
+    }
+
+
+    /* Features */
+
+    .features {
+        padding: 50px 20px;
+    }
+
+    .features h2 {
+        font-size: 25px;
+    }
+
+    .feature-card {
+        width: 100%;
+
+        max-width: 350px;
+    }
+
+
+    /* Doctor page */
+
+    .page-header {
+        padding: 40px 20px 10px;
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+    }
+
+    .doctor-card {
+        width: 100%;
+
+        max-width: 350px;
+    }
+
+
+    /* Forms */
+
+    .form-container {
+        margin: 50px auto;
+    }
+
+
+    /* Dashboard */
+
+    .dashboard-header h1 {
+        font-size: 30px;
+    }
+
+    .dashboard-actions {
+        padding: 0 20px;
+    }
+
+    .dashboard-action {
+        width: 100%;
+
+        max-width: 350px;
+
+        justify-content: center;
+    }
+
+    .appointment-container {
+        width: 90%;
+    }
+
+    .appointment-section {
+        margin-bottom: 45px;
+    }
+
+    .appointment-card {
+        width: 100%;
+
+        max-width: 350px;
+    }
+
+
+    /* Old dashboard navigation */
+
+    .dashboard-nav {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        padding: 15px;
+    }
+
+}

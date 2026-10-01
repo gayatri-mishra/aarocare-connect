@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Dashboard | Aarocare Connect</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            Aarocare Connect
+        </div>
+
+        <div class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('doctors') }}">
+                Find a Doctor
+            </a>
+
+            <a href="{{ url_for('logout') }}" class="nav-signup">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% if messages %}
+
+            {% for category, message in messages %}
+
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+
+        <p class="dashboard-label">
+            PATIENT DASHBOARD
+        </p>
+
+        <h1>
+            Welcome, {{ user.name }}!
+        </h1>
+
+        <p>
+            Manage your appointments and healthcare visits from here.
+        </p>
+
+    </section>
+
+
+    <!-- Quick Actions -->
+    <div class="dashboard-actions">
+
+        <a href="{{ url_for('doctors') }}" class="dashboard-action">
+            <span>👨‍⚕️</span>
+            Find a Doctor
+        </a>
+
+        <a href="{{ url_for('booking') }}" class="dashboard-action">
+            <span>📅</span>
+            Book Appointment
+        </a>
+
+    </div>
+
+
+    <!-- Appointments -->
+    <div class="appointment-container">
+
+
+        <!-- Upcoming Appointments -->
+        <section class="appointment-section">
+
+            <h2>
+                Upcoming Appointments
+            </h2>
+
+            <p class="section-description">
+                Your scheduled healthcare visits.
+            </p>
+
+
+            {% if upcoming_appointments %}
+
+                <div class="appointment-list">
+
+                    {% for appointment in upcoming_appointments %}
+
+                        <div class="appointment-card">
+
+                            <div class="appointment-icon">
+                                📅
+                            </div>
+
+                            <h3>
+                                {{ appointment.doctor_name }}
+                            </h3>
+
+                            <p>
+                                <strong>Date</strong><br>
+                                {{ appointment.appointment_date }}
+                            </p>
+
+                            <p>
+                                <strong>Time</strong><br>
+                                {{ appointment.appointment_time }}
+                            </p>
+
+                            <p>
+                                <strong>Status</strong><br>
+
+                                <span class="status upcoming">
+                                    {{ appointment.status }}
+                                </span>
+
+                            </p>
+
+
+                            <a
+                                href="{{ url_for('cancel_appointment', appointment_id=appointment.id) }}"
+                                class="cancel-btn"
+                                onclick="return confirm('Are you sure you want to cancel this appointment?');"
+                            >
+                                Cancel Appointment
+                            </a>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+            {% else %}
+
+                <div class="empty-message">
+
+                    <div class="empty-icon">
+                        📅
+                    </div>
+
+                    <h3>
+                        No Upcoming Appointments
+                    </h3>
+
+                    <p>
+                        You don't have any upcoming appointments.
+                    </p>
+
+                    <a
+                        href="{{ url_for('doctors') }}"
+                        class="primary-button"
+                    >
+                        Find a Doctor
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- Previous Appointments -->
+        <section class="appointment-section">
+
+            <h2>
+                Previous Appointments
+            </h2>
+
+            <p class="section-description">
+                Your past and cancelled appointments.
+            </p>
+
+
+            {% if previous_appointments %}
+
+                <div class="appointment-list">
+
+                    {% for appointment in previous_appointments %}
+
+                        <div class="appointment-card">
+
+                            <div class="appointment-icon">
+                                📋
+                            </div>
+
+                            <h3>
+                                {{ appointment.doctor_name }}
+                            </h3>
+
+                            <p>
+                                <strong>Date</strong><br>
+                                {{ appointment.appointment_date }}
+                            </p>
+
+                            <p>
+                                <strong>Time</strong><br>
+                                {{ appointment.appointment_time }}
+                            </p>
+
+                            <p>
+                                <strong>Status</strong><br>
+
+                                {% if appointment.status == "Cancelled" %}
+
+                                    <span class="status cancelled">
+                                        Cancelled
+                                    </span>
+
+                                {% else %}
+
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+
+                                {% endif %}
+
+                            </p>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+            {% else %}
+
+                <div class="empty-message">
+
+                    <div class="empty-icon">
+                        📋
+                    </div>
+
+                    <h3>
+                        No Previous Appointments
+                    </h3>
+
+                    <p>
+                        Your previous appointments will appear here.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>Aarocare Connect</h3>
+
+        <p>
+            Making healthcare simpler and more accessible.
+        </p>
+
+        <p class="copyright">
+            © 2026 Aarocare Connect. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

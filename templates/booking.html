@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Appointment | Aarocare Connect</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            Aarocare Connect
+        </div>
+
+        <div class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('logout') }}" class="nav-signup">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Booking Form -->
+    <div class="form-container booking-form">
+
+        <h2>Book Appointment</h2>
+
+        <p class="form-description">
+            Select a doctor, date and time for your appointment.
+        </p>
+
+
+        <!-- Error Message -->
+        {% if error %}
+
+            <p class="error-message">
+                {{ error }}
+            </p>
+
+        {% endif %}
+
+
+        <form method="POST" action="{{ url_for('booking') }}">
+
+            <!-- Doctor -->
+            <label for="doctor_name">
+                Select Doctor
+            </label>
+
+            <select name="doctor_name" id="doctor_name" required>
+
+                <option value="">
+                    Select Doctor
+                </option>
+
+                {% for doc in doctors %}
+
+                    <option
+                        value="{{ doc.name }}"
+                        {% if doctor == doc.name %}selected{% endif %}
+                    >
+                        {{ doc.name }} - {{ doc.specialization }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+
+
+            <!-- Appointment Date -->
+            <label for="appointment_date">
+                Appointment Date
+            </label>
+
+            <input
+                type="date"
+                name="appointment_date"
+                id="appointment_date"
+                required
+            >
+
+
+            <!-- Appointment Time -->
+            <label for="appointment_time">
+                Appointment Time
+            </label>
+
+            <input
+                type="time"
+                name="appointment_time"
+                id="appointment_time"
+                min="09:00"
+                max="23:00"
+                required
+            >
+
+
+            <!-- Clinic Hours -->
+            <p class="form-hint">
+                Clinic hours: 9:00 AM – 11:00 PM
+            </p>
+
+
+            <!-- Submit -->
+            <button type="submit">
+                Confirm Booking
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>Aarocare Connect</h3>
+
+        <p>
+            Making healthcare simpler and more accessible.
+        </p>
+
+        <p class="copyright">
+            © 2026 Aarocare Connect. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Prevent Past Dates -->
+    <script>
+
+        const today = new Date().toISOString().split("T")[0];
+
+        document.getElementById("appointment_date").min = today;
+
+    </script>
+
+</body>
+
+</html>

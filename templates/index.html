@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aarocare Connect</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            Aarocare Connect
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('signup') }}" class="nav-signup">Sign Up</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">
+                YOUR HEALTH, OUR PRIORITY
+            </p>
+
+            <h1>
+                Healthcare Appointment
+                <span>Booking Made Easy</span>
+            </h1>
+
+            <p class="hero-description">
+                Find trusted doctors, book appointments effortlessly,
+                and manage your healthcare visits — all in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{{ url_for('doctors') }}" class="primary-button">
+                    Find a Doctor
+                </a>
+
+                <a href="{{ url_for('signup') }}" class="secondary-button">
+                    Get Started
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="features">
+
+        <h2>Why Choose Aarocare Connect?</h2>
+
+        <p class="section-description">
+            A simple and convenient way to manage your healthcare appointments.
+        </p>
+
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📅</div>
+
+                <h3>Easy Booking</h3>
+
+                <p>
+                    Book appointments with doctors quickly
+                    and conveniently.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">👨‍⚕️</div>
+
+                <h3>Find Doctors</h3>
+
+                <p>
+                    Explore doctors across different
+                    medical specialties.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📋</div>
+
+                <h3>Manage Appointments</h3>
+
+                <p>
+                    View and manage your upcoming
+                    appointments from your dashboard.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>Aarocare Connect</h3>
+
+        <p>
+            Making healthcare simpler and more accessible.
+        </p>
+
+        <p class="copyright">
+            © 2026 Aarocare Connect. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
