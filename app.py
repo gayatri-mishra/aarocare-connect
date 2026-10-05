@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 
+import os
+
 app = Flask(__name__)
 app.secret_key = "aarocare-secret-key"
 
 # SQLite database configuration
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///aarocare.db"
+if os.environ.get("VERCEL"):
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/aarocare.db"
+else:
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///aarocare.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Initialize database
